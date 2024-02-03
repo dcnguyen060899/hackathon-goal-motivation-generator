@@ -164,7 +164,7 @@ agent = OpenAIAgent.from_tools(
     llm=llm,
   verbose=True)
 # Create the Streamlit UI components
-st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
+st.title('👔 InspireMe: Goals & Quotes Generator 🧩')
 
 st.subheader('Instruction')
 st.write("""Provide you the chat your to-do list in this format:
