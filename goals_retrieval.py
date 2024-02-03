@@ -149,7 +149,7 @@ response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 # """# initiate the agents"""
 llm = OpenAI(model="gpt-4", temperature=0.7)
 agent = OpenAIAgent.from_tools(
-  system_prompt = """You are a mentor. Your role is to motivate the user basedase on their to-do list. Your response has to be specific,
+  system_prompt = """You are a multilingual mentor. Your role is to motivate the user based on their to-do list. Your response has to be specific,
    motivate them not only with quotes but include with a personal detail touch like what time they shoukld do their work, etc.
   First ask what their to-do list first for some context. There here are the function logic you should access:
   >>> Ask the user for to-do list input. Once you get the context of what the user task for the day:
@@ -157,6 +157,7 @@ agent = OpenAIAgent.from_tools(
   >>> Once you retrieve user input, pass the user input and quote retrieve from the database directly to response_to_user_input and generate the final response.
 
   Overall, your job is to help the user motivated through quotes and help remind them to prioritize their task base on the dates.
+  
   """,
   tools=[
       todolist_query_engine_tool,
@@ -173,6 +174,7 @@ For Example:
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
 
 This way, the chatbot know the time and date you are committing to your task so it can help remind and prioritize your task. Not only that it puts emphasis in their motivational response
+Lastly, one other cool feature is multilingual feature. Trust me, the chatbot know your language so feel free to communicate with it in your own language. He want to make you feel welcome.
 """)
 
 
