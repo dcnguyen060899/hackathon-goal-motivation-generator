@@ -236,7 +236,7 @@ div.stFileUploader > button {
 """, unsafe_allow_html=True)
 
 # Use columns to create a layout
-col1, col2 = st.columns([0, 2])
+col1, col2 = st.columns([1, 3])
 with col2:
     prompt = st.chat_input('Input your prompt here')
 with col1:
