@@ -171,7 +171,7 @@ st.write("""Provide you the chat your to-do list in this format:
 For Example:
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
 
-This way, the chatbot know the time and date you are committing to your task so it can prioritize and emphasis in their motivational response
+This way, the chatbot know the time and date you are committing to your task so it can help remind and prioritize your task. Not only that it puts emphasis in their motivational response
 """)
 
 
