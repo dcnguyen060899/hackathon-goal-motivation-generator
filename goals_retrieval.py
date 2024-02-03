@@ -155,7 +155,8 @@ agent = OpenAIAgent.from_tools(
   >>> Ask the user for to-do list input. Once you get the context of what the user task for the day:
         >>> Motivate user with one of our quotes of the day from our vector database (todolist_query_engine_tool)
   >>> Once you retrieve user input, pass the user input and quote retrieve from the database directly to response_to_user_input and generate the final response.
-  >>> When user ask to motivate them with image base on the motivation and quotes, use display_tool function.
+
+  Overall, your job is to help the user motivated through quotes and help remind them to prioritize their task base on the dates.
   """,
   tools=[
       todolist_query_engine_tool,
