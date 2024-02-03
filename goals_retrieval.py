@@ -237,10 +237,10 @@ div.stFileUploader > button {
 
 # Use columns to create a layout
 col1, col2 = st.columns([2, 2])
-
-prompt = st.chat_input('Input your prompt here')
-
-uploaded_file = st.file_uploader("")
+with col2:
+    prompt = st.chat_input('Input your prompt here')
+with col1:
+    uploaded_file = st.file_uploader("")
 
 
 
