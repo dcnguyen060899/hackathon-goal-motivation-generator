@@ -207,6 +207,17 @@ st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
 
 # Create a two-column layout
 col1, col2 = st.columns([1, 4])
+# Custom CSS to inject into Streamlit
+st.markdown("""
+<style>
+.YourClass {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    /* Your custom styles here */
+}
+</style>
+""", unsafe_allow_html=True)
 
 # Session state for holding messages
 if 'messages' not in st.session_state:
@@ -218,7 +229,8 @@ for message in st.session_state.messages:
 
 # Use the first column to place the upload button
 with col1:
-    uploaded_file = st.file_uploader("Upload file", type=['csv', 'xlsx'])
+    uploaded_file = st.file_uploader("Upload file", type=['csv', 'xlsx'], key='1')
+    st.markdown('<div class="YourClass">Your content here</div>', unsafe_allow_html=True)
     
 with col2:
     prompt = st.text_input("Input your prompt here")
