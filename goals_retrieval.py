@@ -219,22 +219,45 @@ for message in st.session_state.messages:
 # Use the first column to place the upload button
 with col1:
     # Custom CSS to inject into Streamlit
-    st.markdown("""
+    # Custom CSS to make the uploader look nicer and match your app's style
+    st.markdown(
+    """
     <style>
-    .YourClass {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    /* Your custom styles here */
+    .reportview-container {
+        flex-direction: column-reverse;
+    }
+    .sidebar .sidebar-content {
+        padding-top: 0rem;
+    }
+    .css-1aumxhk {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .css-1aumxhk button {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #CCC;
+    }
+    .stFileUploader {
+        margin-bottom: 2rem;
     }
     </style>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True,
+    )
+
+    # Main layout of the page
+    st.title("InspireMe: Goals & Quotes Generator")
     
-    uploaded_file = st.file_uploader("Upload file", type=['csv', 'xlsx'], key='1')
-    st.markdown('<div class="YourClass">Your content here</div>', unsafe_allow_html=True)
+    # Input bar at the top
+    user_input = st.text_input("Input your prompt here", "")
     
-with col2:
-    prompt = st.text_input("Input your prompt here")
+    # File uploader at the bottom left
+    uploaded_file = st.file_uploader("Upload file", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
+    
+# with col2:
+#     prompt = st.text_input("Input your prompt here")
 
 if prompt:
    # Directly query the OpenAI Agent
