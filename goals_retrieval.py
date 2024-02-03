@@ -165,6 +165,16 @@ agent = OpenAIAgent.from_tools(
   verbose=True)
 # Create the Streamlit UI components
 st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
+
+st.subheader('Instruction')
+st.write("""Provide you the chat your to-do list in this format:
+For Example:
+>>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
+
+This way, the chatbot know the time and date you are committing to your task so it can prioritize and emphasis in their motivational response
+""")
+
+
 # Session state for holding messages
 if 'messages' not in st.session_state:
     st.session_state.messages = []
