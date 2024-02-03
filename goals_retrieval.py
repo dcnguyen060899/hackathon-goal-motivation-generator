@@ -235,10 +235,11 @@ st.markdown(
 col1, col2 = st.columns([3, 1])
 
 with col1:
-    prompt = st.text_input()
+    prompt = st.chat_input('Input your prompt here')
 
 with col2:
-    uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'], key="file-uploader")
+    uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
+
 
 
 if prompt:
