@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from PIL import Image
 import streamlit as st
-
+import openai
 
 load_dotenv()
 # initialize open ai agent model
