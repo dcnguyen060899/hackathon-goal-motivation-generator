@@ -204,7 +204,7 @@ agent = OpenAIAgent.from_tools(
   verbose=True)
 
 # Create the Streamlit UI components
-st.title('👔 SettleSmart 🧩')
+st.title('👔 Goal-Quote-Motivator Generator 🧩')
 
 # Session state for holding messages
 if 'messages' not in st.session_state:
