@@ -218,7 +218,7 @@ for message in st.session_state.messages:
 
 # Use the first column to place the upload button
 with col1:
-    uploaded_file = st.file_uploader("Upload file")
+    uploaded_file = st.file_uploader("Upload file", type=['csv', 'xlsx'])
     
 with col2:
     prompt = st.text_input("Input your prompt here")
