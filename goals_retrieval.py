@@ -146,8 +146,6 @@ def response_to_user_input(nationality: str, todolist_query_engine_tool: str, us
 # Tool for immigration assistance based on nationality and user query
 response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 
-display_tool = FunctionTool.from_defaults(fn=display)
-
 # """# initiate the agents"""
 llm = OpenAI(model="gpt-4", temperature=0.7)
 agent = OpenAIAgent.from_tools(
