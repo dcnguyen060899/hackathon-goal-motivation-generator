@@ -203,7 +203,7 @@ agent = OpenAIAgent.from_tools(
   verbose=True)
 
 # Create the Streamlit UI components
-st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
+st.title('👔 InspireMe: Goals & Quotes Generator 🧩')
 
 # Session state for holding messages
 if 'messages' not in st.session_state:
@@ -236,7 +236,7 @@ div.stFileUploader > button {
 """, unsafe_allow_html=True)
 
 # Use columns to create a layout
-col1, col2 = st.columns([2, 2])
+col1, col2 = st.columns([0, 2])
 with col2:
     prompt = st.chat_input('Input your prompt here')
 with col1:
