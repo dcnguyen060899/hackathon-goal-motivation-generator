@@ -229,10 +229,6 @@ if 'messages' not in st.session_state:
 for message in st.session_state.messages:
     st.chat_message(message['role']).markdown(message['content'])
 
-
-# The file uploader
-uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
-
 # The text input
 prompt = st.text_input("Input your prompt here")
 
