@@ -246,10 +246,7 @@ with col1:
     """,
     unsafe_allow_html=True,
     )
-    
-    # Input bar at the top
-    user_input = st.text_input("Input your prompt here", "")
-    
+        
     # File uploader at the bottom left
     uploaded_file = st.file_uploader("Upload file", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
     
