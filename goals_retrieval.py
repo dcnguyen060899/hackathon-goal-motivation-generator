@@ -15,7 +15,12 @@ import os
 import sys
 import openai
 
+# initialize open ai agent model
+openai.api_key = st.secrets["openai_api_key"]
+# os.environ["ACTIVELOOP_TOKEN"] = ''
 
+# Fetching secrets
+os.environ['ACTIVELOOP_TOKEN'] = st.secrets["active_loop_token"]
 
 INPUT_IMAGE_DIR = "/content/drive/MyDrive/Data Career/Voronoi Projects/user_input"
 os.makedirs(INPUT_IMAGE_DIR, exist_ok=True)
