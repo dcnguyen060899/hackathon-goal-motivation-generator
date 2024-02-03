@@ -146,11 +146,6 @@ def response_to_user_input(nationality: str, todolist_query_engine_tool: str, us
 # Tool for immigration assistance based on nationality and user query
 response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 
-def display(user_input):
-    tools = TextToImageToolSpec()
-    images = tools.generate_images(user_input, n=1)
-    return st.image(images)
-
 display_tool = FunctionTool.from_defaults(fn=display)
 
 # """# initiate the agents"""
@@ -167,7 +162,6 @@ agent = OpenAIAgent.from_tools(
   tools=[
       todolist_query_engine_tool,
       response_to_user_input,
-      display_tool,
     ],
     llm=llm,
   verbose=True)
