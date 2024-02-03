@@ -241,7 +241,7 @@ with col1:
 with col2:
     # Main input and application interface
     st.markdown('<p class="big-font">InspireMe: Goals & Quotes Generator</p>', unsafe_allow_html=True)
-    user_input = st.text_input('', 'Input your prompt here')
+    prompt = st.text_input('', 'Input your prompt here')
 
 
 if prompt:
