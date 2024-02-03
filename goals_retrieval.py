@@ -241,13 +241,6 @@ user_input = st.text_input("Input your prompt here")
 # The file uploader
 uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
 
-# You may need additional custom CSS or adjustments to achieve the exact look you desire.
-
-Please adjust the width, height, and other CSS properties to match your design requirements. The CSS hides the default text of the uploader and styles the button to be aligned and look similar to your user input bar.
-
-Do note that Streamlit's layout and styling capabilities have some limitations and applying custom CSS might require unsafe_allow_html=True parameter, which allows the use of raw HTML. This should be used cautiously as it may pose a security risk if not handled properly.
-
-You would add this code to your Streamlit app where you define your layout. It will overwrite the default styles of the Streamlit file uploader with your custom CSS.
 
 
 
