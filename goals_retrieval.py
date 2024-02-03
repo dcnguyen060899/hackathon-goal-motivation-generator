@@ -63,6 +63,9 @@ from llama_index import set_global_service_context
 from llama_index import ServiceContext, VectorStoreIndex, SimpleDirectoryReader
 from llama_index.embeddings import OpenAIEmbedding
 from llama_index import set_global_service_context
+from llama_hub.tools.google_search import GoogleSearchToolSpec
+from llama_hub.tools.text_to_image.base import TextToImageToolSpec
+
 
 # """# create database"""
 
@@ -136,7 +139,7 @@ class MotivationResponse(BaseModel):
 
 def response_to_user_input(nationality: str, todolist_query_engine_tool: str, user_todo_list: str):
     """
-    Combining everything ranging from combing quote of the day to
+    Combining everything ranging from combing quote of the day to given a motivation speech tailor to the quote given and the user's to-do list
     """
 
     # Define the GPT-4 model
@@ -179,6 +182,15 @@ def response_to_user_input(nationality: str, todolist_query_engine_tool: str, us
 
 # Tool for immigration assistance based on nationality and user query
 response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
+    
+
+def display(user_input):
+    tools = TextToImageToolSpec()
+    images = tool.generate_images(prompt, n=1)
+    return images
+
+display_tool = FunctionTool.from_defaults(fn=display)
+
 
 # """# initiate the agents"""
 
@@ -194,10 +206,14 @@ agent = OpenAIAgent.from_tools(
         >>> Motivate user with one of our quotes of the day from our vector database (todolist_query_engine_tool)
 
   >>> Once you retrieve user input, pass the user input and quote retrieve from the database directly to response_to_user_input and generate the final response.
+  >>> When you get the quote, user to do list and word of motivation, user will want to create an image of their todo list base on these categories.
+  please use the display() function to generate the image and display it when user as for image.
   """,
   tools=[
       todolist_query_engine_tool,
       response_to_user_input,
+      display_tool,
+
     ],
     llm=llm,
   verbose=True)
