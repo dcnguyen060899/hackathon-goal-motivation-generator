@@ -213,32 +213,30 @@ if 'messages' not in st.session_state:
 for message in st.session_state.messages:
     st.chat_message(message['role']).markdown(message['content'])
 
-# Custom CSS to inject for styling
-st.markdown("""
+# Custom CSS to hide the upload text and adjust the button
+hide_upload_text_style = """
 <style>
-.big-font {
-    font-size:30px !important;
+div.stFileUploader {
+  font-size: 0;
 }
-.small-font {
-    font-size:12px !important;
-}
-.streamlit-file-uploader {
-    max-width: 200px;
-    max-height: 200px;
+div.stFileUploader > div > div > button {
+  width: 100%;
+  margin-right: 10px;
 }
 </style>
-""", unsafe_allow_html=True)
+"""
+
+# Apply custom CSS
+st.markdown(hide_upload_text_style, unsafe_allow_html=True)
 
 # Use columns to create a layout
-col1, col2 = st.columns([1, 4])
+col1, col2 = st.columns([2, 1])
 
 with col1:
-    # File uploader in a smaller column
-    uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
+    prompt = st.text_input('Input your prompt here')
 
 with col2:
-    # Main input and application interface
-    prompt = st.text_input('', 'Input your prompt here')
+    uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'], key="file-uploader")
 
 
 if prompt:
