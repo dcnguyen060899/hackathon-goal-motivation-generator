@@ -178,7 +178,7 @@ For Example:
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
 
 This way, the chatbot know the time and date you are committing to your task so it can help remind and prioritize your task. Not only that it puts emphasis in their motivational response
-Lastly, one other cool feature is multilingual feature. Trust me, the chatbot know your language so feel free to communicate with it in your own language. He wants to make you feel welcome.
+Lastly, one other cool feature is multilingual feature. Trust me, the chatbot knows your language so feel free to communicate with it in your own language. He wants to make you feel welcome.
 """)
 
 
