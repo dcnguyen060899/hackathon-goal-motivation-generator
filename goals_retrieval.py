@@ -246,9 +246,6 @@ with col1:
     """,
     unsafe_allow_html=True,
     )
-
-    # Main layout of the page
-    st.title("InspireMe: Goals & Quotes Generator")
     
     # Input bar at the top
     user_input = st.text_input("Input your prompt here", "")
