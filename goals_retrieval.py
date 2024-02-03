@@ -233,8 +233,6 @@ st.markdown("""
 col1, col2 = st.columns([1, 4])
 
 with col1:
-    # Use custom CSS class for small font
-    st.markdown('<p class="small-font">Upload file</p>', unsafe_allow_html=True)
     # File uploader in a smaller column
     uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
 
