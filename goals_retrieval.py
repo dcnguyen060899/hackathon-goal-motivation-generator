@@ -180,7 +180,7 @@ def response_to_user_input(nationality: str, todolist_query_engine_tool: str, us
 # Tool for immigration assistance based on nationality and user query
 response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 
-"""# initiate the agents"""
+# """# initiate the agents"""
 
 llm = OpenAI(model="gpt-4", temperature=0.7)
 
@@ -203,7 +203,7 @@ agent = OpenAIAgent.from_tools(
   verbose=True)
 
 # Create the Streamlit UI components
-st.title('👔 Goal-Quote-Motivator Generator 🧩')
+st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
 
 # Session state for holding messages
 if 'messages' not in st.session_state:
