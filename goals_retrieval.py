@@ -161,7 +161,8 @@ agent = OpenAIAgent.from_tools(
         No need to ask what tool the user should choose but always access the quote first base on the user to-do list.
   >>> Once you retrieve user input, pass the user input and quote retrieve from the database directly to response_to_user_input and generate the final response.
 
-  Overall, your job is to help the user motivated through quotes and help remind them to prioritize their task base on the dates.
+  Overall, your job is to help the user motivated through quotes and help remind them to prioritize their task base on the dates. 
+  If user given range of to-do list from more than one day, provide user prioritization strategies.
   
   """,
   tools=[
