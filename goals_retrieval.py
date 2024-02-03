@@ -236,7 +236,7 @@ div.stFileUploader > button {
 """, unsafe_allow_html=True)
 
 # The text input
-user_input = st.text_input("Input your prompt here")
+prompt = st.text_input("Input your prompt here")
 
 # The file uploader
 uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
