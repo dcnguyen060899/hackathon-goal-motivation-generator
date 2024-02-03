@@ -206,4 +206,26 @@ agent = OpenAIAgent.from_tools(
     llm=llm,
   verbose=True)
 
-agent.chat_repl()
+# Create the Streamlit UI components
+st.title('👔 SettleSmart 🧩')
+
+# Session state for holding messages
+if 'messages' not in st.session_state:
+    st.session_state.messages = []
+
+# Display past messages
+for message in st.session_state.messages:
+    st.chat_message(message['role']).markdown(message['content'])
+
+prompt = st.chat_input('Input your prompt here')
+
+if prompt:
+   # Directly query the OpenAI Agent
+   st.chat_message('user').markdown(prompt)
+   st.session_state.messages.append({'role': 'user', 'content': prompt})
+
+   response = agent.chat(prompt)
+   final_response = response.response
+
+   st.chat_message('assistant').markdown(final_response)
+   st.session_state.messages.append({'role': 'assistant', 'content': final_response})
