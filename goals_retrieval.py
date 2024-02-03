@@ -55,7 +55,7 @@ import re
 import numpy as np
 from IPython.display import display
 import matplotlib.pyplot as plt
-from google.colab.patches import cv2_imshow
+# from google.colab.patches import cv2_imshow
 import cv2
 import pandas as pd
 import ipywidgets as widgets
