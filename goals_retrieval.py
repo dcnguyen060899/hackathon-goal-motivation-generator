@@ -174,7 +174,7 @@ agent = OpenAIAgent.from_tools(
 st.title('👔 InspireMe: Goals & Quotes Generator 🧩')
 
 st.subheader('Instruction')
-st.write("""Provide you the chat your to-do list in this format ->
+st.write("""Provide the chat of your to-do list to your AI Chatbot in this format ->
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
 
 For example:
