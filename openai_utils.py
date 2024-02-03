@@ -4,7 +4,6 @@ import os
 from io import BytesIO
 
 from dotenv import load_dotenv
-from openai import OpenAI
 from PIL import Image
 import streamlit as st
 import openai
@@ -18,7 +17,7 @@ openai.api_key = st.secrets["openai_api_key"]
 # openai_api_key = st.secrets["openai_api_key"]
 os.environ['ACTIVELOOP_TOKEN'] = st.secrets["active_loop_token"]
 # %%
-
+from openai import OpenAI
 client = OpenAI()
 
 
