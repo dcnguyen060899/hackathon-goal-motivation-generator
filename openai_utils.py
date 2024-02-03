@@ -8,8 +8,15 @@ from openai import OpenAI
 from PIL import Image
 
 load_dotenv()
+# initialize open ai agent model
+openai.api_key = st.secrets["openai_api_key"]
+# os.environ["ACTIVELOOP_TOKEN"] = ''
 
+# Fetching secrets
+# openai_api_key = st.secrets["openai_api_key"]
+os.environ['ACTIVELOOP_TOKEN'] = st.secrets["active_loop_token"]
 # %%
+
 client = OpenAI()
 
 
