@@ -230,7 +230,7 @@ div.stFileUploader > div > div > button {
 st.markdown(hide_upload_text_style, unsafe_allow_html=True)
 
 # Use columns to create a layout
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([2, 2])
 
 with col1:
     prompt = st.chat_input('Input your prompt here')
