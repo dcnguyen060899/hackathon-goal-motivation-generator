@@ -236,7 +236,7 @@ with col1:
     prompt = st.chat_input('Input your prompt here')
 
 with col2:
-    uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
+    uploaded_file = st.file_uploader("")
 
 
 
