@@ -250,8 +250,8 @@ with col1:
     # File uploader at the bottom left
     uploaded_file = st.file_uploader("Upload file", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
     
-# with col2:
-#     prompt = st.text_input("Input your prompt here")
+with col2:
+    prompt = st.text_input("Input your prompt here")
 
 if prompt:
    # Directly query the OpenAI Agent
