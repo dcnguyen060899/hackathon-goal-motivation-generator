@@ -6,6 +6,8 @@ from io import BytesIO
 from dotenv import load_dotenv
 from openai import OpenAI
 from PIL import Image
+import streamlit as st
+
 
 load_dotenv()
 # initialize open ai agent model
