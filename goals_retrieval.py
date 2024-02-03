@@ -64,15 +64,15 @@ from llama_index import ServiceContext, VectorStoreIndex, SimpleDirectoryReader
 from llama_index.embeddings import OpenAIEmbedding
 from llama_index import set_global_service_context
 
-"""# create database"""
+# """# create database"""
 
 import json
 from llama_index import Document
 
 
-"""# retrieve to-do list vector database"""
+# """# retrieve to-do list vector database"""
 
-"""# load vector database"""
+# """# load vector database"""
 
 class Quotes(BaseModel):
     """Data model for Quote related to user's To-do List"""
