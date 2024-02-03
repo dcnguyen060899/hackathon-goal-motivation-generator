@@ -148,7 +148,7 @@ response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 
 def display(user_input):
     tools = TextToImageToolSpec()
-    images = tools.generate_images(prompt, n=1)
+    images = tools.generate_images(user_input, n=1)
     return st.image(images)
 
 display_tool = FunctionTool.from_defaults(fn=display)
