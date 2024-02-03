@@ -174,8 +174,10 @@ st.title('👔 InspireMe: Goals & Quotes Generator 🧩')
 
 st.subheader('Instruction')
 st.write("""Provide you the chat your to-do list in this format ->
-For Example:
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
+For example:
+- "On Saturday, Feb 3, 2024, I have to wake up at 7:30 AM to work till 3:30 PM. Before heading out to work I water my plant and take a shower. At 3:30 PM. Then I need to get home and walk my dog. At 6:30PM
+I cook dinner for my family. Then at 8:30PM I work on my assignment for UC Berkeley Online Program. I go to bed around 10:30 ish because I have to wake up for work at 6:30 AM the next day.
 
 This way, the chatbot know the time and date you are committing to your task so it can help remind and prioritize your task. Not only that it puts emphasis in their motivational response
 Lastly, one other cool feature is multilingual feature. Trust me, the chatbot knows your language so feel free to communicate with it in your own language. He wants to make you feel welcome.
