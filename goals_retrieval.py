@@ -132,6 +132,10 @@ def response_to_user_input(nationality: str, todolist_query_engine_tool: str, us
     Author:...
     Motivation:...
     Important Date:...
+
+    For multilingual example:
+    >>> User's Input: "Việc cần làm": "tưới cây trong phòng", "thời gian": "4:30 sáng", "ngày": "Thứ Bảy, ngày 3 tháng 2 năm 2024"
+    >>> Output: 'Hãy nhớ rằng: “Cách duy nhất để làm được việc lớn là yêu thích việc bạn làm”. - Steve Jobs. Chăm sóc cây không chỉ là một nhiệm vụ mà còn là một hành động nuôi dưỡng sự sống. Khi bạn yêu thích việc mình làm, ngay cả những hành động đơn giản nhất cũng có thể mang lại sự hài lòng và niềm vui lớn lao. Hãy nhớ rằng, sự phát triển của cây phản ánh sự quan tâm và tình yêu mà bạn dành cho nó. Giữ nó lên! Vì vậy, hãy đặt báo thức vào lúc 4:30 sáng Thứ Bảy tuần này, ngày 3 tháng 2 năm 2024 và đừng quên tưới nước cho cây của bạn.'
     """
     # Create a function to generate response based on the user's query and nationality
     motivation_completion_program = MultiModalLLMCompletionProgram.from_defaults(
@@ -174,7 +178,7 @@ For Example:
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
 
 This way, the chatbot know the time and date you are committing to your task so it can help remind and prioritize your task. Not only that it puts emphasis in their motivational response
-Lastly, one other cool feature is multilingual feature. Trust me, the chatbot know your language so feel free to communicate with it in your own language. He want to make you feel welcome.
+Lastly, one other cool feature is multilingual feature. Trust me, the chatbot know your language so feel free to communicate with it in your own language. He wants to make you feel welcome.
 """)
 
 
