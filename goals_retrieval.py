@@ -205,9 +205,6 @@ agent = OpenAIAgent.from_tools(
 # Create the Streamlit UI components
 st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
 
-# Create a two-column layout
-col1, col2 = st.columns([1, 4])
-
 # Session state for holding messages
 if 'messages' not in st.session_state:
     st.session_state.messages = []
@@ -216,42 +213,36 @@ if 'messages' not in st.session_state:
 for message in st.session_state.messages:
     st.chat_message(message['role']).markdown(message['content'])
 
-# Use the first column to place the upload button
+# Custom CSS to inject for styling
+st.markdown("""
+<style>
+.big-font {
+    font-size:30px !important;
+}
+.small-font {
+    font-size:12px !important;
+}
+.streamlit-file-uploader {
+    max-width: 200px;
+    max-height: 200px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Use columns to create a layout
+col1, col2 = st.columns([1, 4])
+
 with col1:
-    # Custom CSS to inject into Streamlit
-    # Custom CSS to make the uploader look nicer and match your app's style
-    st.markdown(
-    """
-    <style>
-    .reportview-container {
-        flex-direction: column-reverse;
-    }
-    .sidebar .sidebar-content {
-        padding-top: 0rem;
-    }
-    .css-1aumxhk {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .css-1aumxhk button {
-        width: 100%;
-        border-radius: 5px;
-        border: 1px solid #CCC;
-    }
-    .stFileUploader {
-        margin-bottom: 2rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-    )
-        
-    # File uploader at the bottom left
-    uploaded_file = st.file_uploader("Upload file", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
-    
+    # Use custom CSS class for small font
+    st.markdown('<p class="small-font">Upload file</p>', unsafe_allow_html=True)
+    # File uploader in a smaller column
+    uploaded_file = st.file_uploader("", type=['csv', 'txt', 'jpg', 'jpeg', 'png'])
+
 with col2:
-    prompt = st.text_input("Input your prompt here")
+    # Main input and application interface
+    st.markdown('<p class="big-font">InspireMe: Goals & Quotes Generator</p>', unsafe_allow_html=True)
+    user_input = st.text_input('', 'Input your prompt here')
+
 
 if prompt:
    # Directly query the OpenAI Agent
