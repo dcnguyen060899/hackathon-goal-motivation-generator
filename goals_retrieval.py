@@ -205,6 +205,17 @@ agent = OpenAIAgent.from_tools(
 # Create the Streamlit UI components
 st.title('👔 InspireMe: Goals & Quotes Generator" 🧩')
 
+# Create a two-column layout
+col1, col2 = st.columns([1, 4])
+
+# Use the first column to place the upload button
+with col1:
+    uploaded_file = st.file_uploader("Upload file")
+
+# Use the second column for the user input bar
+with col2:
+    user_input = st.text_input("Input your prompt here")
+    
 # Session state for holding messages
 if 'messages' not in st.session_state:
     st.session_state.messages = []
