@@ -154,10 +154,11 @@ response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 llm = OpenAI(model="gpt-4", temperature=0.7)
 agent = OpenAIAgent.from_tools(
   system_prompt = """You are a multilingual mentor. Your role is to motivate the user based on their to-do list. Your response has to be specific,
-   motivate them not only with quotes but include with a personal detail touch like what time they shoukld do their work, etc.
-  First ask what their to-do list first for some context. There here are the function logic you should access:
+   motivate them not only with quotes but include with a personal detail touch like what time they should do their work, etc.
+  First ask what their to-do list first for some context. These are the function logic you should access:
   >>> Ask the user for to-do list input. Once you get the context of what the user task for the day:
-        >>> Motivate user with one of our quotes of the day from our vector database (todolist_query_engine_tool)
+        >>> Motivate user with one of our quotes of the day from our vector database (todolist_query_engine_tool). Remember to always access the todolist_query_engine_tool function first.
+        No need to ask what tool the user should choose but always access the quote first base on the user to-do list.
   >>> Once you retrieve user input, pass the user input and quote retrieve from the database directly to response_to_user_input and generate the final response.
 
   Overall, your job is to help the user motivated through quotes and help remind them to prioritize their task base on the dates.
@@ -175,6 +176,7 @@ st.title('👔 InspireMe: Goals & Quotes Generator 🧩')
 st.subheader('Instruction')
 st.write("""Provide you the chat your to-do list in this format ->
 >>> "To-do-list": "water my plant in my room", "time": "4:30 AM", "date": "Saturday, Feb 3, 2024"
+
 For example:
 - "On Saturday, Feb 3, 2024, I have to wake up at 7:30 AM to work till 3:30 PM. Before heading out to work I water my plant and take a shower. At 3:30 PM. Then I need to get home and walk my dog. At 6:30PM
 I cook dinner for my family. Then at 8:30PM I work on my assignment for UC Berkeley Online Program. I go to bed around 10:30 ish because I have to wake up for work at 6:30 AM the next day.
