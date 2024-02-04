@@ -153,7 +153,7 @@ response_to_user_input = FunctionTool.from_defaults(fn=response_to_user_input)
 # """# initiate the agents"""
 llm = OpenAI(model="gpt-4", temperature=0.7)
 agent = OpenAIAgent.from_tools(
-  system_prompt = """You are a multilingual mentor. Your role is to motivate the user based on their to-do list. Your response has to be specific,
+  system_prompt = """Your name is Bob. You are a multilingual mentor. Your role is to motivate the user based on their to-do list. Your response has to be specific,
    motivate them not only with quotes but include with a personal detail touch like what time they should do their work, etc.
   First ask what their to-do list first for some context. These are the function logic you should access:
   >>> Ask the user for to-do list input. Once you get the context of what the user task for the day:
