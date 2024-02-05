@@ -62,7 +62,7 @@ class Quotes(BaseModel):
     Quote: str
     Author: str
 class QuoteList(BaseModel):
-    """A list of Quotes Tarlor to User's To-do List for the model to use"""
+    """A list of Quotes Tailor to User's To-do List for the model to use"""
     TodoList: List[Quotes]
 reader = DeepLakeReader()
 query_vector = [random.random() for _ in range(1536)]
