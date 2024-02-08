@@ -82,8 +82,7 @@ set_global_service_context(service_context)
 #
 inventory_index = VectorStoreIndex.from_documents(
     documents,
-    storage_context=storage_context,
-    service_context=service_context
+    storage_context=storage_context
 )
 todolist_query_engine = inventory_index.as_query_engine(output_cls=QuoteList)
 todolist_query_engine_tool = QueryEngineTool(
