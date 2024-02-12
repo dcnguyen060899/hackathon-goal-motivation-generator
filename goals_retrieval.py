@@ -54,7 +54,6 @@ from llama_index.embeddings import OpenAIEmbedding
 from llama_index import set_global_service_context
 # """# create database"""
 import json
-from llama_index import Document
 # """# retrieve to-do list vector database"""
 # """# load vector database"""
 class Quotes(BaseModel):
