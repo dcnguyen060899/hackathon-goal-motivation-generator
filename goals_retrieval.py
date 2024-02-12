@@ -18,7 +18,6 @@ os.environ['ACTIVELOOP_TOKEN'] = st.secrets["active_loop_token"]
 # Imports
 #
 from typing import List
-from llama_hub.tools.weather import OpenWeatherMapToolSpec
 from llama_index import (
     Document,
     ServiceContext,
